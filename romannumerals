@@ -1,0 +1,21 @@
+% Declare recursive functions in ascending onder. we put the condition that the number must meet. 
+% Then the recursive function that will continue the activity if necessary is applied, 
+% for example, if we put 30 it will enter X<40, then it will evaluate in 'Y is X - 40'.
+
+transform(X) :- X = 0, put(" ").
+transform(X) :- X < 4, put("I"), Y is X - 1, transform(Y).
+transform(X) :- X = 4, put("I"), put("V").
+transform(X) :- X = 5, put("V").
+transform(X) :- X < 9, put("V"), Y is X - 5, transform(Y).
+transform(X) :- X = 9, put("I"), put("X").
+transform(X) :- X < 40, put("X"), Y is X - 10, transform(Y).
+transform(X) :- X < 50, put("X"), put("L"), Y is X - 40, transform(Y).
+transform(X) :- X < 90, put("L"), Y is X - 50, transform(Y).
+transform(X) :- X < 100, put("X"), put("C"), Y is X - 90, transform(Y).
+transform(X) :- X < 400, put("C"), Y is X - 100, transform(Y).
+transform(X) :- X < 500, put("C"), put("D"), Y is X - 400, transform(Y).
+transform(X) :- X < 900, put("D"), put("D"), Y is X - 500, transform(Y).
+transform(X) :- X < 1000, put("C"), put("M"), Y is X - 900, transform(Y).
+transform(X) :- X < 4000, put("M"), Y is X - 1000, transform(Y).
+
+% https://www.codepoc.io/blog/prolog/4958/prolog-program-to-convert-decimal-number-to-roman-number?utm_source=22
